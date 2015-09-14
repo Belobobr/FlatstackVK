@@ -22,6 +22,7 @@ local.properties
 *.iml
 *.ipr
 *.iws
+.idea/**
 classes/**
 target/**
 
