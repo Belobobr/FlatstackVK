@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="news_feed_loader" type="id"/>
+    <item name="video_preview_loader" type="id"/>
+</resources>

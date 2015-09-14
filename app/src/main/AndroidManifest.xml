@@ -1,0 +1,44 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.flatstack.flatstackvk">
+
+    <permission
+        android:name="ru.flatstack.vk.contentprovider.permission.READ_WRITE_PROVIDER"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="ru.yandex.weather.provider.permission.READ_WRITE_PROVIDER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name=".VkontakteApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.news.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.vk.sdk.VKOpenAuthActivity" />
+
+        <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity" android:theme="@style/VK.Transparent" />
+
+        <service android:name=".service.VkontakteClientService" />
+
+        <provider
+            android:name=".content.provider.VkontakteContentProvider"
+            android:authorities="ru.flatstack.vk.contentprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="ru.flatstack.vk.contentprovider.permission.READ_WRITE_PROVIDER" />
+
+    </application>
+
+</manifest>
